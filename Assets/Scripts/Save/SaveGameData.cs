@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 
 [System.Serializable]
 public class SaveGameData
@@ -16,6 +17,9 @@ public class SaveGameData
     public List<int[]> savadGamesInfo; // Lista de texturas byte
     public List<bool> newspaperStatusForGame; // Estado da publicação em jornal durante a vendo do jogo atual.
     public List<int> estimatedPrice; // Preço estimado de cada jogo
+
+    // Optional so saves created before this field existed still deserialize
+    [OptionalField] public List<float> estimatedReputation;
 
     public string studioName; // Nome de estudio
     public byte[] studioByte;
@@ -47,6 +51,7 @@ public class SaveGameData
         gameByte = SavableGameData.gameByte;
         savadGamesInfo = SavableGameData.savadGamesInfo;
         estimatedPrice = SavableGameData.estimatedPrice;
+        estimatedReputation = SavableGameData.estimatedReputation;
 
         studioName = SavableGameData.studioName;
         studioByte = SavableGameData.studioByte;

@@ -6,11 +6,14 @@ using TMPro;
 
 public class Programming : BasePage
 {
+    private const int ColorChangeKeystrokes = 10;
+
     public static Programming Instance;
 
     #region public
     [Header("===Programming===")]
     public int minimumProgressNeeded = 150;
+    [SerializeField] private ProgrammingConfig config = null;
     [Space]
 
     [SerializeField] private TextMeshProUGUI sourceCodeText = null;
@@ -26,11 +29,9 @@ public class Programming : BasePage
 
     [Header("===Scroll===")]
     [Space]
-    [SerializeField] private RectTransform rectTransform = null;
     [SerializeField] private ScrollRect scrollRect = null;
     [Space]
 
-    [SerializeField] private float scrollSpeed = 4.5f;
     [SerializeField] private NewDevOp developer = null;
     [HideInInspector] public bool externalWorkInProgress = false;
 
@@ -45,8 +46,9 @@ public class Programming : BasePage
     #region private
     private bool programingFinishing = false;
     private int sourceCodeClickCount = 0;
-    private int sourceCodeScrollDelay = 0;
-    private float scrollPanelSizeY = 0f;
+
+    private SourceCodeFeed _sourceCodeFeed = null;
+    private KeystrokeRateLimiter _keystrokeLimiter = null;
     #endregion
 
     //======================//=======================//======================//
@@ -79,16 +81,9 @@ public class Programming : BasePage
     private void Awake()
     {
         Instance = this;
-    }
 
-    public override void OpenSoftware()
-    {
-        base.OpenSoftware();
-
-        if (!SoftwareScreen.activeInHierarchy) return;
-
-        if (scrollPanelSizeY == 0)
-            scrollPanelSizeY = rectTransform.sizeDelta.y;
+        _sourceCodeFeed = new SourceCodeFeed(sourceCodeString, config.charsPerKeystroke, config.maxVisibleLines, config.maxVisibleCharacters);
+        _keystrokeLimiter = new KeystrokeRateLimiter(config.maxKeystrokesPerSecond);
     }
 
     private void Update()
@@ -99,7 +94,7 @@ public class Programming : BasePage
         if (!IsProgrammingAllowed())
             return;
 
-        if (Input.anyKeyDown && ReservedKeys())
+        if (Input.anyKeyDown && ReservedKeys() && _keystrokeLimiter.TryRegister(Time.time))
             UpdateCode();
 
         // Cheating
@@ -125,31 +120,20 @@ public class Programming : BasePage
 
 
     #region Programming
+    // The player is the lead developer, so each keystroke is worth more than an employee tick
     private void UpdateCode()
     {
-        UpdateCodeProgress(1);
+        UpdateCodeProgress(config.leaderMultiplier);
         sourceCodeClickCount++;
-        sourceCodeScrollDelay++;
 
-        // Scroll the text
         if (scrollRect)
             scrollRect.verticalNormalizedPosition = 0;
 
-        const int charsToAdd = 10;
-        int textLength = sourceCodeText.text.Length;
-       
-        for (int i = textLength; i <= textLength + charsToAdd; i++)
-            sourceCodeText.text += sourceCodeString[i];
-
-        // Update the mini text
+        _sourceCodeFeed.Advance();
+        sourceCodeText.text = _sourceCodeFeed.VisibleText;
         miniSourceCodeText.text = sourceCodeText.text;
 
-        // Change text color if click threshold is reached
-        const int clickThreshold = 10;
-        if (sourceCodeScrollDelay > 30)
-            rectTransform.sizeDelta += new Vector2(0, scrollSpeed);
-
-        if (sourceCodeClickCount >= clickThreshold)
+        if (sourceCodeClickCount >= ColorChangeKeystrokes)
             ChangeColorText();
 
         audioList.PlayRandonAudioClip(); 
@@ -165,10 +149,11 @@ public class Programming : BasePage
 
     private void ResetDisplay()
     {
+        _sourceCodeFeed.Reset();
+        _keystrokeLimiter.Reset();
         sourceCodeText.text = "";
         miniSourceCodeText.text = "";
         softwareTitle.text = "Programming";
-        rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, scrollPanelSizeY);
     }
 
     public void EndProgramming()

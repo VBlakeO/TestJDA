@@ -3,35 +3,29 @@ using UnityEngine;
 
 public class SalesSystem : MonoBehaviour
 {
+    // Copies are paid in pairs to halve the number of deposits
+    private const int CopiesPerTick = 2;
+    private const float TickSeconds = 0.3f;
+
     public int i_sales;
     public int index;
 
-    private float marketingRate = 1;
+    // The save stores copies, not ticks, so a reload does not halve the remaining sales again
+    public int RemainingCopies => i_sales * CopiesPerTick;
 
     public IEnumerator Sale(float price, int sales)
     {
-        i_sales = (int)sales/2;
-        marketingRate = 1;
+        i_sales = sales / CopiesPerTick;
 
-        WaitForSeconds wfs = new(0.3f);
-
-        for (int i = 0; i < SavableGameData.activatedMarketing.Length; i++)
-        {
-            if (SavableGameData.activatedMarketing[i])
-                marketingRate -= SavableGameData.marketingValue[i];
-        }
+        WaitForSeconds _wait = new(TickSeconds);
 
         while (i_sales > 0)
         {
             i_sales--;
-            SavableGameData.DepositMoney((price * marketingRate) * 2);
-            yield return wfs;
+            SavableGameData.DepositMoney(price * CopiesPerTick);
+            yield return _wait;
         }
 
-        if (i_sales <= 0)
-        {
-           // SavableData.salesSystem.Remove(this);
-            Destroy(gameObject);
-        }
+        Destroy(gameObject);
     }
 }

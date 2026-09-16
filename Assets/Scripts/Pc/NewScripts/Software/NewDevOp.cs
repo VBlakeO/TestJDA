@@ -50,9 +50,7 @@ public class NewDevOp : BasePage
     private GameInfo gameInfo = null;
 
     private float _estimatedPrice = 0f;
-    private float _estimatedReputation = 0f;
     private float _estimatedProgrammingProgress = 0f;
-    private float _estimatedMarketingReputation = 0f;
 
     private int currentTab;
 
@@ -233,10 +231,11 @@ public class NewDevOp : BasePage
     {
         float baseReputationPerGame = reputation.reputationInfo.reputationPerGame;
         _estimatedPrice = baseGamePrice + (baseGamePrice * devSettingsTab.DevelopmentComplexity) + (10 * devSettingsTab.ToolsComplexity);
-        _estimatedReputation = baseReputationPerGame + (baseReputationPerGame * devSettingsTab.DevelopmentComplexity) + (10 * devSettingsTab.ToolsComplexity);
+        float _estimatedReputation = baseReputationPerGame + (baseReputationPerGame * devSettingsTab.DevelopmentComplexity) + (10 * devSettingsTab.ToolsComplexity);
         _estimatedProgrammingProgress = programming.minimumProgressNeeded + (programming.minimumProgressNeeded * devSettingsTab.DevelopmentComplexity) + (10 * devSettingsTab.ToolsComplexity);
 
         SavableGameData.estimatedPrice.Add((int)_estimatedPrice);
+        StoreEstimatedReputation(_estimatedReputation);
 
         pc_Manager.OpenSoftware(1);
         gameProgress.UpdateProgress(0);
@@ -244,6 +243,25 @@ public class NewDevOp : BasePage
 
         PreSave();
         UpdateBigScreen();
+    }
+
+    // Saves from older versions have no entries for their games, so the list is padded to keep indexes aligned with gameName
+    private void StoreEstimatedReputation(float estimatedReputation)
+    {
+        List<float> _stored = SavableGameData.estimatedReputation;
+        float _baseReputation = reputation.reputationInfo.reputationPerGame;
+
+        while (_stored.Count < SavableGameData.gameName.Count)
+            _stored.Add(_baseReputation);
+
+        _stored.Add(estimatedReputation);
+    }
+
+    private float GetEstimatedReputation(int gameIndex)
+    {
+        List<float> _stored = SavableGameData.estimatedReputation;
+
+        return gameIndex < _stored.Count ? _stored[gameIndex] : reputation.reputationInfo.reputationPerGame;
     }
 
     public void FinishedProgramming()
@@ -271,16 +289,8 @@ public class NewDevOp : BasePage
 
     public void SellGame()
     {
-        for (int i = 0; i < SavableGameData.activatedMarketing.Length; i++) 
-        {
-            if(SavableGameData.activatedMarketing[i])
-            {
-                _estimatedMarketingReputation += SavableGameData.marketingValue[i];
-            }
-        }
-
         // A complexidade do jogo deve alterar o reconhecimento recebido.
-        devSaleScreen.SellGame(_estimatedReputation + _estimatedMarketingReputation);
+        devSaleScreen.SellGame(GetEstimatedReputation(gameInfo.gameIndex) + GetActiveMarketingReputation());
         
         devPublishingTab.GameTexture = new Texture2D[SavableGameData.gameByte.Count];
         devPublishingTab.GameSprites = new Sprite[devPublishingTab.GameTexture.Length];
@@ -291,6 +301,20 @@ public class NewDevOp : BasePage
     
         gameInfo.SavePublished();
         CallOpenSavedGames();
+    }
+
+    // Recomputed on every sale so the bonus of previous games never carries over
+    private float GetActiveMarketingReputation()
+    {
+        float _marketingReputation = 0f;
+
+        for (int i = 0; i < SavableGameData.activatedMarketing.Length; i++)
+        {
+            if (SavableGameData.activatedMarketing[i])
+                _marketingReputation += SavableGameData.marketingValue[i];
+        }
+
+        return _marketingReputation;
     }
 
     public void UpdateDevSetting()

@@ -44,7 +44,7 @@ public class SaveManager : MonoBehaviour
         SavableGameData.copiesSold = new int[salesSystem.Count];
 
         for (int i = 0; i < salesSystem.Count; i++)
-           SavableGameData.copiesSold[i] = salesSystem[i].i_sales;
+           SavableGameData.copiesSold[i] = salesSystem[i].RemainingCopies;
 
         for (int i = 0; i < employeeList.Count; i++)
            SavableGameData.employeeId[i] = employeeList[i].id;
@@ -75,6 +75,7 @@ public class SaveManager : MonoBehaviour
         SavableGameData.gameByte = data.gameByte;
         SavableGameData.savadGamesInfo = data.savadGamesInfo;
         SavableGameData.estimatedPrice = data.estimatedPrice;
+        SavableGameData.estimatedReputation = data.estimatedReputation ?? new List<float>();
 
         SavableGameData.studioName = data.studioName;
         SavableGameData.studioByte = data.studioByte;
@@ -121,15 +122,18 @@ public class SaveManager : MonoBehaviour
         m_salesSystem.StartCoroutine(m_salesSystem.Sale(price, sales));
     }
 
+    // RestoreEmployee already registers the employee in employeeList, so it must not be added here again
     public void InstantiateEmployee(int id)
     {
-        var employee = employeeManager.HireEmployee(id);
+        GameObject _employee = employeeManager.RestoreEmployee(id);
+
+        if (_employee == null)
+            return;
 
         if (Programming.Instance.IsProgrammingAllowed())
-            employee.GetComponent<Employee>().StartWorking();
-        
-        employeeList.Add(employee.GetComponent<Employee>());
-        employeeCards[SavableGameData.employeeId[id]].hiredEmployee = true;
+            _employee.GetComponent<Employee>().StartWorking();
+
+        employeeCards[id].hiredEmployee = true;
     }
 } 
 
@@ -150,6 +154,7 @@ public static class SavableGameData
     public static List<byte[]> gameByte; // Lista de texturas byte.
     public static List<int[]> savadGamesInfo; // Lista de texturas byte.
     public static List<int> estimatedPrice; // Lista de preços estimados de jogo.
+    public static List<float> estimatedReputation; // Estimated reputation of each game, same index as gameName
     public static List<bool> newspaperStatusForGame;// Lista de jogos publicados.
 
     public static string studioName; // Nome do Estudio
@@ -199,6 +204,7 @@ public static class SavableGameData
         gameByte = new List<byte[]>();
         savadGamesInfo = new List<int[]>();
         estimatedPrice = new List<int>();
+        estimatedReputation = new List<float>();
         newspaperStatusForGame = new List<bool>();
 
         studioName = "Default";

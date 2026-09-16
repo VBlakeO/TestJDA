@@ -68,17 +68,11 @@ public class GameProgressController : MonoBehaviour
 
     public bool ObjectivesAchieved()
     {
-        bool _objectivesAchieve = false;
-
-        if (SavableGameData.currentMoney >= moneyRequired &&
+        return SavableGameData.currentMoney >= moneyRequired &&
             reputationSystem.RequiredReputationAchieved() &&
             marketingKing.GetActivatedMarketingAmount() >= activatedMarketingAmountRequired &&
-            employeeManager.GetNumberOfEmployees() >= activatedMarketingAmountRequired &&
-            SavableGameData.gamePublished.Count >= requiredReleasedGames)
-
-            _objectivesAchieve = true;
-
-        return _objectivesAchieve;
+            employeeManager.GetNumberOfEmployees() >= numberOfEmployeesRequired &&
+            SavableGameData.gamePublished.Count >= requiredReleasedGames;
     }
 
     private void VerifyProgress()

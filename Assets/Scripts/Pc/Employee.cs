@@ -3,15 +3,17 @@ using UnityEngine;
 
 public class Employee : MonoBehaviour
 {
+    private const float WorkTickSeconds = 0.7f;
+
     public int id = 0;
     public float salary = 0;
     [SerializeField] private float productivity = 1f;
 
-    private bool loop = false;
-
     private Employee_AI employeeAI = null;
     private Programming programming = null;
     private EmployeeManager employeeManager = null;
+
+    private Coroutine _workRoutine = null;
 
     private void Start()
     {
@@ -27,16 +29,33 @@ public class Employee : MonoBehaviour
             StartWorking();
     }
 
+    // Loading a save and Start can both request work, so only one routine may ever run
     public void StartWorking()
     {
-        loop = true;
-        StartCoroutine(WorkRoutine());
+        if (_workRoutine != null)
+            return;
+
+        _workRoutine = StartCoroutine(WorkRoutine());
     }
 
     private void StopWorking()
     {
-        loop = false;
-        StopCoroutine(WorkRoutine());
+        if (_workRoutine == null)
+            return;
+
+        StopCoroutine(_workRoutine);
+        _workRoutine = null;
+    }
+
+    // Unity kills coroutines on disable, so the handle must be cleared to allow a restart
+    private void OnDisable()
+    {
+        StopWorking();
+    }
+
+    private void OnDestroy()
+    {
+        UnsubscribeFromProjectEvents();
     }
 
     public void GoAway()
@@ -44,18 +63,26 @@ public class Employee : MonoBehaviour
         StopWorking();
         employeeAI.GoAway();
 
-        PC_Manager.Instance.OnStartProject -= StartWorking;
-        PC_Manager.Instance.OnFinishProject -= StopWorking;
+        UnsubscribeFromProjectEvents();
 
         SaveManager.Instance.employeeList.Remove(this);
         employeeManager.employees.Remove(gameObject);
     }
 
+    private void UnsubscribeFromProjectEvents()
+    {
+        if (PC_Manager.Instance == null)
+            return;
+
+        PC_Manager.Instance.OnStartProject -= StartWorking;
+        PC_Manager.Instance.OnFinishProject -= StopWorking;
+    }
+
     private IEnumerator WorkRoutine()
     {
-        WaitForSeconds wfs = new(0.7f);
+        WaitForSeconds _wait = new(WorkTickSeconds);
 
-        while (loop)
+        while (true)
         {
             if (programming != null && programming.HasWorkInProgress())
             {
@@ -63,7 +90,7 @@ public class Employee : MonoBehaviour
                     programming.UpdateCodeProgress(productivity);
             }
 
-            yield return wfs;
+            yield return _wait;
         }
     }
 }
