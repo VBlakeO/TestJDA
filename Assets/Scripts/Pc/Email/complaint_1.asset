@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77887b4847cb96740a2592a617727153, type: 3}
+  m_Name: complaint_1
+  m_EditorClassIdentifier: 
+  subject:
+  - gameName - A Profound...
+  - "gameName - Uma Desilus\xE3o..."
+  email:
+  - 'Subject: gameName - A Profound Disappointment
+
+    
+
+    Dear team at studioName
+    Studio,
+
+    
+
+    The narrative felt forced and uninteresting, and the characters
+    lacked depth and development. The game mechanics were clumsy and unrefined, making
+    gameplay a frustrating experience. Furthermore, the graphics left much to be
+    desired compared to other industry titles.
+
+    
+
+    It''s disheartening to
+    see studioName Studio produce a game that falls so far short of what would be
+    expected from a company with your reputation. It appears there was a lack of
+    commitment to the quality and excellence that I would expect to see in your projects.
+
+    
+
+    I
+    hope you take these criticisms seriously and consider significant improvements
+    in future endeavors.
+
+    
+
+    With disappointment,
+
+    
+
+    Emily Walker
+
+    emily.walker@inmail.com'
+  - "Assunto: gameName - Uma Desilus\xE3o Profunda\r\n\r\nPrezada equipe do Est\xFAdio
+    studioName,\r\n\r\nA narrativa pareceu for\xE7ada e desinteressante, e os personagens
+    careciam de profundidade e desenvolvimento. As mec\xE2nicas de jogo eram desajeitadas
+    e pouco polidas, tornando a jogabilidade uma experi\xEAncia frustrante. Al\xE9m
+    disso, os gr\xE1ficos deixaram muito a desejar em compara\xE7\xE3o com outros
+    t\xEDtulos da ind\xFAstria.\r\n\r\n\xC9 triste ver o Est\xFAdio studioName produzir
+    um jogo t\xE3o aqu\xE9m do que se esperaria de uma empresa com sua reputa\xE7\xE3o.
+    Parece que houve falta de compromisso com a qualidade e a excel\xEAncia que eu
+    esperaria ver em seus projetos.\r\n\r\nEspero que voc\xEAs levem essas cr\xEDticas
+    a s\xE9rio e considerem melhorar significativamente em futuros empreendimentos.\r\n\r\nCom
+    desapontamento,\r\n\r\nEmily Walker\nemily.walker@inmail.com"

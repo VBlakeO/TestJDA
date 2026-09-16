@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77887b4847cb96740a2592a617727153, type: 3}
+  m_Name: BadFirstGame
+  m_EditorClassIdentifier: 
+  subject:
+  - Disappointment with the Game...
+  - "Decep\xE7\xE3o com o Jogo..."
+  email:
+  - 'Subject: Disappointment with the Game gameName from Studio studioName
+
+
+    Dear
+    team at Studio studioName,
+
+
+    I hope this message finds you well. Recently,
+    I had the opportunity to play your first title, gameName, and I would like to
+    share my concerns regarding the game.
+
+
+    To be direct, I am extremely disappointed
+    with the experience that gameName provided. I was expecting much more, considering
+    the excitement that surrounded the game''s release. Unfortunately, reality did
+    not meet my expectations.
+
+
+    I hope that in the future, Studio studioName
+    can learn from this experience and continue working to create more engaging and
+    innovative games. I believe you have potential, and I look forward to seeing
+    how you can evolve in the gaming industry.
+
+
+    Sincerely,
+
+
+    John Smith
+
+    john.smith@inmail.com'
+  - "Assunto: Decep\xE7\xE3o com o Jogo gameName do Studio studioName\r\n\r\nPrezada
+    equipe do Studio studioName,\r\n\r\nEspero que esta mensagem os encontre. Recentemente,
+    tive a oportunidade de jogar o seu primeiro t\xEDtulo, gameName, e gostaria de
+    compartilhar minhas preocupa\xE7\xF5es em rela\xE7\xE3o ao jogo.\r\n\r\nPara
+    ser direto, estou extremamente decepcionado com a experi\xEAncia que gameName
+    ofereceu. Esperava muito mais, considerando a empolga\xE7\xE3o que cercou o lan\xE7amento
+    do jogo. Infelizmente, a realidade n\xE3o correspondeu \xE0s expectativas.\r\n\r\nEspero
+    que, no futuro, o Studio studioName possa aprender com essa experi\xEAncia e
+    continuar trabalhando para criar jogos mais cativantes e inovadores. Acredito
+    que voc\xEAs t\xEAm potencial, e estou ansioso para ver como voc\xEAs podem evoluir
+    na ind\xFAstria de jogos.\r\n\r\nAtenciosamente,\r\n\r\nJohn Smith\njohn.smith@inmail.com"

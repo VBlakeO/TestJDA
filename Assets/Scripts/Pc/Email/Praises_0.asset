@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77887b4847cb96740a2592a617727153, type: 3}
+  m_Name: Praises_0
+  m_EditorClassIdentifier: 
+  subject:
+  - Praise for the Game gameName...
+  - Elogio ao Jogo gameName...
+  email:
+  - 'Subject: Praise for the Game gameName from studioName Studio
+
+
+    Dear members
+    of Studio studioName,
+
+
+    I just wanted to express how amazed I am with the
+    game gameName that you have created. The engaging narrative, innovative mechanics,
+    and stunning graphics make this game a true masterpiece.
+
+
+    You have truly
+    showcased exceptional talent in crafting this game, and it''s evident the effort
+    and passion you''ve poured into it. I want to thank the entire team at Studio
+    studioName for providing such an incredible gaming experience. You deserve all
+    the recognition and success you are receiving.
+
+
+    I can''t wait to see what
+    you have in store for us in the future. Keep up the excellent work!
+
+
+    Enthusiastic
+    regards,
+
+
+    Sarah Mitchell
+
+    sarah.mitchell@inmail.com'
+  - "Assunto: Elogio ao Jogo gameName do Est\xFAdio studioName :\r\n\r\nCaros membros
+    do Est\xFAdio studioName,\r\n\r\nEu s\xF3 queria expressar o qu\xE3o maravilhado
+    estou com o jogo gameName que voc\xEAs criaram. A narrativa envolvente, as mec\xE2nicas
+    inovadoras e os gr\xE1ficos deslumbrantes tornam este jogo uma verdadeira obra-prima.\r\n\r\nVoc\xEAs
+    realmente mostraram um talento excepcional na cria\xE7\xE3o deste jogo, e \xE9
+    evidente o esfor\xE7o e a paix\xE3o que investiram nele. Quero agradecer a toda
+    a equipe do Est\xFAdio studioName por proporcionar uma experi\xEAncia de jogo
+    t\xE3o incr\xEDvel. Voc\xEAs merecem todo o reconhecimento e sucesso que est\xE3o
+    recebendo.\r\n\r\nMal posso esperar para ver o que voc\xEAs t\xEAm reservado
+    para n\xF3s no futuro. Continuem com o excelente trabalho!\r\n\r\nSauda\xE7\xF5es
+    entusiasmadas,\r\n\r\nSarah Mitchell\nsarah.mitchell@inmail.com"

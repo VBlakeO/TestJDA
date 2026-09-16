@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77887b4847cb96740a2592a617727153, type: 3}
+  m_Name: complaint_0
+  m_EditorClassIdentifier: 
+  subject:
+  - 'Utter Disappointment with gameName '
+  - "Decep\xE7\xE3o Total com gameName."
+  email:
+  - 'Subject: Utter Disappointment with gameName
+
+
+    Dear members of studioName
+    Studio,
+
+
+    It is with great regret that I write this email to express my profound
+    disappointment with the game gameName. I had such high expectations for this
+    title, but unfortunately, it fell far short of my hopes.
+
+
+    I cannot help
+    but feel that studioName Studio missed a valuable opportunity to create something
+    special with gameName. There seems to have been a lack of care and attention
+    to detail in the production of this game, which is extremely disappointing for
+    fans of your company.
+
+
+    I sincerely hope that you take these constructive
+    criticisms into consideration and that future projects receive the attention
+    and care they deserve.
+
+
+    With disappointment,
+
+
+    John Smith
+
+    john.smith@inmail.com'
+  - "Assunto: Decep\xE7\xE3o Total com gameName\n\r\nCaros membros do Est\xFAdio
+    studioName,\r\n\r\n\xC9 com grande pesar que escrevo este e-mail para expressar
+    minha profunda decep\xE7\xE3o com o jogo gameName. Eu tinha expectativas t\xE3o
+    altas para este t\xEDtulo, mas, infelizmente, ele n\xE3o atendeu nem de longe
+    \xE0s minhas esperan\xE7as.\r\n\r\nN\xE3o posso deixar de sentir que o Est\xFAdio
+    studioName perdeu uma oportunidade valiosa de criar algo especial com gameName.
+    Parece que houve uma falta de cuidado e aten\xE7\xE3o aos detalhes na produ\xE7\xE3o
+    deste jogo, o que \xE9 extremamente decepcionante para os f\xE3s da sua empresa.\r\n\r\nEspero
+    sinceramente que voc\xEAs levem essas cr\xEDticas construtivas em considera\xE7\xE3o
+    e que futuros projetos recebam a aten\xE7\xE3o e o cuidado que merecem.\r\n\r\nCom
+    desapontamento,\r\n\r\nJohn Smith\njohn.smith@inmail.com"

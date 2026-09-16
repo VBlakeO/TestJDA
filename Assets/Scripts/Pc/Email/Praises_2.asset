@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77887b4847cb96740a2592a617727153, type: 3}
+  m_Name: Praises_2
+  m_EditorClassIdentifier: 
+  subject:
+  - gameName - A Fantastic Gaming...
+  - "gameName - Uma Experi\xEAncia de Jogo..."
+  email:
+  - 'Subject: gameName - A Fantastic Gaming Experience!
+
+
+    Dear team at Studio
+    studioName,
+
+
+    I would like to take this opportunity to congratulate you on
+    the incredible game gameName. I was captivated from the moment I started the
+    adventure, and I wanted to share my excitement with you.
+
+
+    It''s clear that
+    you have invested a lot of time and passion in creating this game, and the end
+    result is truly remarkable. gameName is a shining example of what the gaming
+    industry can achieve when talents like yours come together.
+
+
+    I hope you
+    continue to surprise us with your future projects because I am looking forward
+    to what''s to come. Thank you very much for providing this amazing gaming experience!
+
+
+    With
+    admiration,
+
+
+    Alex Parker
+
+    alex.parker@inmail.com'
+  - "Assunto: gameName - Uma Experi\xEAncia de Jogo Fant\xE1stica!\r\n\r\nPrezada
+    equipe do Est\xFAdio studioName,\r\n\r\nGostaria de aproveitar esta oportunidade
+    para parabenizar voc\xEAs pelo incr\xEDvel jogo gameName. Fui cativado desde
+    o momento em que iniciei a aventura e queria compartilhar meu entusiasmo com
+    voc\xEAs.\r\n\r\n\xC9 claro que voc\xEAs investiram muito tempo e paix\xE3o na
+    cria\xE7\xE3o deste jogo, e o resultado final \xE9 verdadeiramente not\xE1vel.
+    gameName \xE9 um exemplo brilhante do que a ind\xFAstria de jogos pode alcan\xE7ar
+    quando talentos como os de voc\xEAs se unem.\r\n\r\nEspero que continuem a surpreender-nos
+    com seus futuros projetos, pois estou ansioso para ver o que est\xE1 por vir.
+    Muito obrigado por proporcionar essa experi\xEAncia de jogo incr\xEDvel!\r\n\r\nCom
+    admira\xE7\xE3o,\r\n\r\nAlex Parker\nalex.parker@inmail.com\r"

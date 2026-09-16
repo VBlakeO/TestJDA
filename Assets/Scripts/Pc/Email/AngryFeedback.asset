@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77887b4847cb96740a2592a617727153, type: 3}
+  m_Name: AngryFeedback
+  m_EditorClassIdentifier: 
+  subject:
+  - Angry Feedback for studioName...
+  - 'Feedback Irritado... '
+  email:
+  - 'Subject: Angry Feedback for studioName Studio
+
+
+    Dear incompetents at studioName
+    Studio,
+
+
+    I can''t believe the lack of talent you have been showing in your
+    games. It''s astounding how you manage to release title after title that is so
+    terrible. You should be ashamed of wasting time and resources on what you do.
+
+
+    Your
+    stories are bland, your mechanics are pathetic, and your graphics are a disgrace.
+    Why do you continue to create this garbage? It''s a complete waste of space in
+    the gaming market.
+
+
+    I hope you abandon this endeavor altogether and leave
+    the gaming industry to real professionals. You are a joke and should be treated
+    as such.
+
+
+    With contempt,
+
+
+    anonymous
+
+    michael.carter@example.com'
+  - "Assunto: Feedback Irritado para o Est\xFAdio studioName\n\r\nCaros incompetentes
+    do Est\xFAdio studioName,\r\n\r\nN\xE3o posso acreditar na falta de talento que
+    voc\xEAs t\xEAm demonstrado em seus jogos. \xC9 impressionante como conseguem
+    lan\xE7ar t\xEDtulo ap\xF3s t\xEDtulo que s\xE3o t\xE3o terr\xEDveis. Voc\xEAs
+    deviam se envergonhar por desperdi\xE7ar tempo e recursos no que fazem.\r\n\r\nSuas
+    hist\xF3rias s\xE3o ins\xEDpidas, suas mec\xE2nicas s\xE3o pat\xE9ticas e seus
+    gr\xE1ficos s\xE3o uma desgra\xE7a. Por que voc\xEAs continuam a criar essa porcaria?
+    \xC9 uma completa perda de espa\xE7o no mercado de jogos.\r\n\r\nEspero que voc\xEAs
+    abandonem de vez essa empreitada e deixem a ind\xFAstria de jogos para os profissionais
+    de verdade. Voc\xEAs s\xE3o uma piada e devem ser tratados como tal.\r\n\r\nCom
+    desprezo,\r\n\r\nAn\xF4nimo\nmichael.carter@example.com"

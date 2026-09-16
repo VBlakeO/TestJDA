@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77887b4847cb96740a2592a617727153, type: 3}
+  m_Name: GoodFirstGame
+  m_EditorClassIdentifier: 
+  subject:
+  - Congratulations on the Launch...
+  - "Parab\xE9ns pelo Lan\xE7amento..."
+  email:
+  - 'Subject: Congratulations on the Launch of Your First Game!
+
+
+    Dear Team
+    at Studio studioName,
+
+
+    It is with great joy that I write this message to
+    congratulate you on the launch of your first game, gameName! This is an exciting
+    moment and a significant milestone in your studio''s history, and I would like
+    to extend my heartfelt congratulations on this remarkable achievement.
+
+
+    The
+    release of a first game is a significant milestone, and I look forward to seeing
+    how gameName will be received by the gaming community. I''m sure it will win
+    many fans and open doors to exciting future projects from your studio.
+
+
+    Keep
+    up the excellent work, maintain your innovative spirit, and know that I am rooting
+    for the ongoing success of Studio studioName. This is just the beginning of an
+    exciting journey, and I can''t wait to see what the future holds for you.
+
+
+    Sincerely,
+
+
+    John
+    Smith
+
+    john.smith@inMail.com'
+  - "Assunto: Parab\xE9ns pelo Lan\xE7amento do Primeiro Jogo!\r\n\r\nPrezada Equipe
+    do Est\xFAdio studioName,\r\n\r\n\xC9 com grande alegria que escrevo esta mensagem
+    para parabeniz\xE1-los pelo lan\xE7amento do seu primeiro jogo, gameName ! Este
+    \xE9 um momento emocionante e um marco significativo na hist\xF3ria do seu est\xFAdio,
+    e eu gostaria de expressar meus mais sinceros cumprimentos por essa conquista
+    not\xE1vel.\r\n\r\nO lan\xE7amento de um primeiro jogo \xE9 um marco significativo,
+    e estou ansioso para ver como o gameName ser\xE1 recebido pela comunidade de
+    jogadores. Tenho certeza de que ele conquistar\xE1 muitos f\xE3s e abrir\xE1
+    portas para futuros projetos emocionantes do seu est\xFAdio.\r\n\r\nContinuem
+    o excelente trabalho, mantenham o esp\xEDrito inovador e saibam que estou torcendo
+    pelo sucesso cont\xEDnuo do Est\xFAdio studioName. Este \xE9 apenas o come\xE7o
+    de uma jornada empolgante, e mal posso esperar para ver o que o futuro reserva
+    para voc\xEAs.\r\n\r\nAtenciosamente,\r\n\r\nJohn Smith\njohn.smith@inMail.com"

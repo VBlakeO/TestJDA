@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77887b4847cb96740a2592a617727153, type: 3}
+  m_Name: complaint_2
+  m_EditorClassIdentifier: 
+  subject:
+  - 'A Disappointing Experience '
+  - "Uma Experi\xEAncia Decepcionante "
+  email:
+  - 'Subject: gameName - A Disappointing Experience
+
+
+    Dear members of the studioName
+    Studio team,
+
+
+    I feel compelled to share my deep disappointment after playing
+    gameName. As a big fan of your previous work, I eagerly anticipated this game,
+    but it failed to meet my expectations in any way.
+
+
+    The game''s narrative
+    was one of the main points of failure, with a generic story and unengaging characters.
+    The gameplay mechanics were clumsy and unintuitive, making the player experience
+    frustrating rather than enjoyable. Furthermore, the graphics seemed dated and
+    didn''t meet current industry standards.
+
+
+    It''s hard to believe that this
+    game was produced by the same studio that brought us incredible titles in the
+    past. I hope you reconsider your development approaches and strive to deliver
+    more impressive gaming experiences in the future.
+
+
+    With sadness,
+
+
+    Daniel
+    Mitchell
+
+    daniel.mitchell@inmail.com'
+  - "Assunto: gameName - Uma Experi\xEAncia Decepcionante\r\n\r\nCaros membros da
+    equipe do Est\xFAdio studioName,\r\n\r\nSinto-me compelido a compartilhar minha
+    profunda decep\xE7\xE3o ap\xF3s jogar gameName. Como um grande f\xE3 de seus
+    trabalhos anteriores, esperava ansiosamente por este jogo, mas ele n\xE3o conseguiu
+    atender \xE0s minhas expectativas de forma alguma.\r\n\r\nA narrativa do jogo
+    foi um dos principais pontos de falha, com uma hist\xF3ria gen\xE9rica e personagens
+    pouco envolventes. As mec\xE2nicas de jogo eram desajeitadas e pouco intuitivas,
+    tornando a experi\xEAncia do jogador frustrante em vez de divertida. Al\xE9m
+    disso, os gr\xE1ficos pareciam datados e n\xE3o estavam \xE0 altura dos padr\xF5es
+    atuais da ind\xFAstria.\r\n\r\n\xC9 dif\xEDcil acreditar que este jogo tenha
+    sido produzido pelo mesmo est\xFAdio que nos trouxe t\xEDtulos incr\xEDveis no
+    passado. Espero que voc\xEAs revejam suas abordagens de desenvolvimento e se
+    esforcem para entregar experi\xEAncias de jogo mais impressionantes no futuro.\r\n\r\nCom
+    tristeza,\r\n\r\nDaniel Mitchell\ndaniel.mitchell@example.com"

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77887b4847cb96740a2592a617727153, type: 3}
+  m_Name: FakeNews
+  m_EditorClassIdentifier: 
+  subject:
+  - Sabotagem
+  - Sabotage
+  email:
+  - 'Subject: Sabotage
+
+
+    A rival studio spread rumors that your games steal user
+    data.
+
+    This led to a drop in your reputation.
+
+
+    The management.'
+  - "Assunto: Sabotagem\r\n\nUm est\xFAdio rival espalhou rumores de que seus jogos
+    roubam dados de usu\xE1rios. \nIsto levou a uma queda\r \nna sua reputa\xE7\xE3o.\n\nA
+    ger\xEAncia."

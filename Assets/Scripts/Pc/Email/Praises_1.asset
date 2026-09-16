@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77887b4847cb96740a2592a617727153, type: 3}
+  m_Name: Praises_1
+  m_EditorClassIdentifier: 
+  subject:
+  - gameName - A Gem in the...
+  - "gameName - Uma J\xF3ia da..."
+  email:
+  - 'Subject:  gameName - A Gem in the Gaming Industry
+
+
+    Dear talented members
+    of Studio studioName,
+
+
+    I want to express my admiration for the game gameName
+    that you recently released. I was thoroughly impressed by the quality and enjoyment
+    this game provides.
+
+
+    The story is engaging, with exciting twists that kept
+    me eagerly anticipating what would happen next. The gameplay mechanics are intuitive
+    and challenging just right, keeping me entertained for hours on end. And the
+    visuals are stunning; it''s evident the effort you put into the details.
+
+
+    In
+    summary, gameName is a true gem in the gaming industry, and you deserve all the
+    praise you are receiving. I can''t wait to see what the future holds for you
+    and for the studio''s upcoming projects.
+
+
+    With respect and admiration,
+
+
+    John
+    Harrison
+
+    john.harrison@emailgamefanatic.com'
+  - "Assunto: gameName - Uma J\xF3ia da Ind\xFAstria de Jogos\r\n\r\nPrezados membros
+    talentosos do Est\xFAdio studioName,\r\n\r\nQuero expressar minha admira\xE7\xE3o
+    pelo jogo gameName que voc\xEAs lan\xE7aram recentemente. Fiquei completamente
+    impressionado com a qualidade e a divers\xE3o que este jogo oferece.\r\n\r\nA
+    hist\xF3ria \xE9 envolvente, com reviravoltas emocionantes que me mantiveram
+    ansioso para descobrir o que aconteceria em seguida. As mec\xE2nicas de jogo
+    s\xE3o intuitivas e desafiadoras na medida certa, mantendo-me entretido por horas
+    a fio. E os visuais s\xE3o deslumbrantes; \xE9 evidente o esfor\xE7o que voc\xEAs
+    dedicaram aos detalhes.\r\n\nEm resumo, gameName \xE9 uma verdadeira j\xF3ia
+    da ind\xFAstria de jogos, e voc\xEAs merecem todos os elogios que est\xE3o recebendo.
+    Mal posso esperar para ver o que o futuro reserva para voc\xEAs e para os pr\xF3ximos
+    projetos do est\xFAdio.\r\n\r\nCom respeito e admira\xE7\xE3o,\r\n\r\nJohn Harrison\njohn.harrison@emailgamefanatic.com"

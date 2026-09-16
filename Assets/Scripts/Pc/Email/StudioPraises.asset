@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77887b4847cb96740a2592a617727153, type: 3}
+  m_Name: StudioPraises
+  m_EditorClassIdentifier: 
+  subject:
+  - Praise for the Progress of...
+  - Elogios ao Progresso do...
+  email:
+  - 'Subject: Praise for the Progress of Studio studioName
+
+
+    Dear team at Studio
+    studioName,
+
+
+    I hope this message finds you well. On behalf of the entire
+    Mystic Tiger Studios team, we would like to extend our heartfelt praise for the
+    remarkable progress that Studio studioName has achieved recently.
+
+
+    We have
+    been closely following your work, and we are truly impressed by what you have
+    been accomplishing. It is evident that you have been tirelessly dedicated to
+    creating engaging and innovative gaming experiences.
+
+
+    Please continue your
+    excellent work, and we look forward to seeing the incredible creations that the
+    future holds for Studio studioName.
+
+
+    Sincerely,
+
+
+    David Turner
+
+    david.turner@mystictigerstudios.com'
+  - "Assunto: Elogios ao Progresso do Est\xFAdio studioName\r\n\nPrezada equipe do
+    Est\xFAdio studioName,\r\n\nEspero que esta mensagem os encontre bem. Em nome
+    de toda a equipe da Mystic Tiger Studios, gostar\xEDamos de expressar nossos
+    mais sinceros elogios pelo progresso not\xE1vel que o Est\xFAdio studioName tem
+    alcan\xE7ado recentemente.\r\n\nAcompanhamos atentamente o seu trabalho e estamos
+    verdadeiramente impressionados com o que voc\xEAs t\xEAm conquistado. \xC9 evidente
+    que voc\xEAs t\xEAm se dedicado incansavelmente para criar experi\xEAncias de
+    jogo envolventes e inovadoras.\r\n\nContinuem com o excelente trabalho e ansiamos
+    por ver as incr\xEDveis cria\xE7\xF5es que o futuro reserva para o Est\xFAdio
+    studioName.\r\n\nAtenciosamente,\r\n\nDavid Turner\ndavid.turner@mystictigerstudios.com"

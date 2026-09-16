@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ada6c8a12ac25c4c9205e86596241a2, type: 3}
+  m_Name: Newspaper
+  m_EditorClassIdentifier: 
+  image: {fileID: 21300000, guid: 33b0e117b264b504cba267e6702acabc, type: 3}
+  namme:
+  - Newspapers
+  - Jornais
+  description:
+  - Do you want to reach a wide and diverse audience in an effective and impactful
+    way? Our Marketing Service via Printed Newspaper is the answer! Connect with
+    thousands of information-hungry readers and promote your brand, products or services
+    in a powerful way.
+  - "Voc\xEA deseja alcan\xE7ar um p\xFAblico amplo e diversificado de forma eficaz
+    e impactante? Nosso Servi\xE7o de Marketing via Jornal Impresso \xE9 a resposta!
+    Conecte-se com milhares de leitores \xE1vidos por informa\xE7\xF5es e promova
+    sua marca, produtos ou servi\xE7os de maneira poderosa."
+  cost: 1500
+  disclosure: 15
