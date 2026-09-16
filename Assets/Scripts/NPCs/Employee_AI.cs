@@ -8,6 +8,11 @@ public enum RestAnim{Dance, LookBinoculars, ReadingBook, DrinkCoffee, UsingCellP
 [RequireComponent(typeof(NavMeshAgent))]
 public class Employee_AI : MonoBehaviour
 {
+    private const string SleepAnimParam = "Sleep";
+    private const float SleepWorkingTimeRatio = 0.5f;
+    private const float SleepChanceRollMax = 100f;
+    private const float SleepChanceThreshold = 75f;
+
     private Transform target = null;
 
     [HideInInspector] public Transform exitTranform = null;
@@ -58,7 +63,7 @@ public class Employee_AI : MonoBehaviour
     //////////////////////////////////
     public bool OnTable() => target == tableTranform && distance <= 1.2f;
     private bool GoingAway() => target == exitTranform && !OnTable();
-    public bool ReadyToWork() => !resting && OnTable();
+    public bool ReadyToWork() => !resting && !sleeping && OnTable();
     private float GetPcDirection() => tableId % 2 == 0 ? -94 : 94;
 
     private bool isWorking = false;
@@ -78,6 +83,7 @@ public class Employee_AI : MonoBehaviour
     public void GoToRestArea()
     {
         target = restTranform;
+        ClearSleep();
         StopWork();
         SetDestination();
     }
@@ -86,6 +92,7 @@ public class Employee_AI : MonoBehaviour
     {
         target = exitTranform;
         SetDestination();
+        ClearSleep();
         StopWork();
 
         anim.SetBool("GoingAway", true);
@@ -147,11 +154,11 @@ public class Employee_AI : MonoBehaviour
                 }
             }
 
-            if (currentWorkingTime >= workingTime / 2 && trySleep < 1)
+            if (currentWorkingTime >= workingTime * SleepWorkingTimeRatio && trySleep < 1)
             {
                 trySleep++;
 
-                if (Random.Range(0f, 100f) > 75f)
+                if (Random.Range(0f, SleepChanceRollMax) > SleepChanceThreshold)
                     Sleep();
             }
 
@@ -218,6 +225,7 @@ public class Employee_AI : MonoBehaviour
         anim.SetBool("GoingAway", false);
         anim.Play("Debating", 0, 0);
 
+        ClearSleep();
         StopWork();
         StartCoroutine(SetBeingLoaded());
     }
@@ -236,8 +244,8 @@ public class Employee_AI : MonoBehaviour
     {
         sleeping = true;
 
-        anim.SetBool("Sleep", true);
-        faceAnim.SetBool("Sleep", true);
+        anim.SetBool(SleepAnimParam, true);
+        faceAnim.SetBool(SleepAnimParam, true);
 
         StopWork();
 
@@ -245,15 +253,24 @@ public class Employee_AI : MonoBehaviour
         particle.Play();
     }
 
+    // Only the player waking the employee up plays the dialogue
     public void ToWakeUp()
     {
         if (!sleeping) return;
 
         dialogueAI.UponWaking();
+        ClearSleep();
+    }
 
-        anim.SetBool("Sleep", false);
-        faceAnim.SetBool("Sleep", false);
-        
+    // Leaving the table while asleep would otherwise keep the animations and the particle running forever
+    private void ClearSleep()
+    {
+        if (!sleeping) return;
+
+        anim.SetBool(SleepAnimParam, false);
+        faceAnim.SetBool(SleepAnimParam, false);
+
+        particle.Stop();
         particle.gameObject.SetActive(false);
 
         sleeping = false;
